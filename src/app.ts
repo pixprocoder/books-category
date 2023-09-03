@@ -1,4 +1,5 @@
 import cors from "cors";
+import "dotenv/config";
 import express, { Application } from "express";
 import routers from "./app/routes";
 
@@ -10,5 +11,4 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/api/v1", routers);
-
 export default app;
