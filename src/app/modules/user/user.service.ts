@@ -33,9 +33,20 @@ const updateUserFromDB = async (id: string, payload: Partial<Users>) => {
   return result;
 };
 
+// Delete user
+const deleteUserFromDB = async (id: string) => {
+  const result = await prisma.users.delete({
+    where: {
+      id,
+    },
+  });
+  return result;
+};
+
 export const userService = {
   createUser,
   getAllUsersFromDB,
   getSingleUserFromDB,
   updateUserFromDB,
+  deleteUserFromDB,
 };

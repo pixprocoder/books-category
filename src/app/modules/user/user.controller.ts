@@ -41,10 +41,21 @@ const updateUserFromDB = async (req: Request, res: Response) => {
     data: result,
   });
 };
+// delete user
+const deleteUserFromDB = async (req: Request, res: Response) => {
+  const result = await userService.deleteUserFromDB(req.params.id);
+  res.send({
+    success: true,
+    statusCode: 200,
+    message: " User deleted successfully",
+    data: result,
+  });
+};
 
 export const userController = {
   createUser,
   getAllUsersFromDB,
   getSingleUserFromDB,
   updateUserFromDB,
+  deleteUserFromDB,
 };
