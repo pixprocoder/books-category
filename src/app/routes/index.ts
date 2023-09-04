@@ -13,6 +13,7 @@ const moduleRoutes = [
     path: "/users",
     route: userRoutes,
   },
+
   // category routes
   {
     path: "/categories/create-category",
