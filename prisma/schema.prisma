@@ -61,12 +61,18 @@ model ReviewAndRating {
 }
 
 model Order {
-  id           String   @id @default(uuid())
+  id           String      @id @default(uuid())
   userId       String
   orderedBooks Json
-  status       String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  status       OrderStatus
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
 
   @@map("orders")
+}
+
+enum OrderStatus {
+  pending
+  shipped
+  delivered
 }
