@@ -24,7 +24,6 @@ const getAllBooks = async (req: Request, res: Response) => {
 
 // Get Book by categoryId
 const bookByCategory = async (req: Request, res: Response) => {
-  console.log(req.body.categoryId);
   const result = await BookServices.bookByCategory(req.params.categoryId);
   res.send({
     success: true,
@@ -34,8 +33,44 @@ const bookByCategory = async (req: Request, res: Response) => {
   });
 };
 
+// Get single book
+const singleBook = async (req: Request, res: Response) => {
+  const result = await BookServices.singleBook(req.params.id);
+  res.send({
+    success: true,
+    statusCode: 200,
+    message: "Book Fetched successfully",
+    data: result,
+  });
+};
+
+// Update book
+const updateBook = async (req: Request, res: Response) => {
+  const result = await BookServices.updateBook(req.params.id, req.body);
+  res.send({
+    success: true,
+    statusCode: 200,
+    message: "Book Updated successfully",
+    data: result,
+  });
+};
+
+// Delete book
+const deleteBook = async (req: Request, res: Response) => {
+  const result = await BookServices.deleteBook(req.params.id);
+  res.send({
+    success: true,
+    statusCode: 200,
+    message: "Book Deleted successfully",
+    data: result,
+  });
+};
+
 export const BookControllers = {
   createBook,
   getAllBooks,
   bookByCategory,
+  singleBook,
+  updateBook,
+  deleteBook,
 };
