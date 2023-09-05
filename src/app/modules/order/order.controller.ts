@@ -11,6 +11,18 @@ const createOrder = async (req: Request, res: Response) => {
   });
 };
 
+// Get All Orders
+const getAllOrders = async (req: Request, res: Response) => {
+  const result = await OrderServices.getAllOrders();
+  res.send({
+    success: true,
+    statusCode: 200,
+    message: "Order fetched successfully",
+    data: result,
+  });
+};
+
 export const OrderController = {
   createOrder,
+  getAllOrders,
 };

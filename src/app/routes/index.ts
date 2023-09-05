@@ -41,6 +41,10 @@ const moduleRoutes = [
     path: "/orders/create-order",
     route: OrderRoutes,
   },
+  {
+    path: "/orders",
+    route: OrderRoutes,
+  },
 ];
 
 moduleRoutes.forEach((route) => router.use(route.path, route.route));
