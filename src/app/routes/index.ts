@@ -7,12 +7,17 @@ import { OrderRoutes } from "../modules/order/order.route";
 const router = express.Router();
 
 const moduleRoutes = [
+  // user routes
   {
     path: "/auth/signup",
     route: userRoutes,
   },
   {
     path: "/users",
+    route: userRoutes,
+  },
+  {
+    path: "/profile",
     route: userRoutes,
   },
 

@@ -1,12 +1,12 @@
 import { Order } from "@prisma/client";
 import prisma from "../../../shared/prisma";
 
-const createOrder = async (orderData: Order) => {
-  const result = await prisma.order.create({
-    data: orderData,
-  });
-  return result;
-};
+// const createOrder = async (orderData: Order) => {
+//   const result = await prisma.order.create({
+//     data: orderData,
+//   });
+//   return result;
+// };
 
 // Get all orders
 const getAllOrders = async () => {
@@ -15,6 +15,6 @@ const getAllOrders = async () => {
 };
 
 export const OrderServices = {
-  createOrder,
+  // createOrder,
   getAllOrders,
 };

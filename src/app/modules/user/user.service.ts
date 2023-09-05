@@ -8,11 +8,13 @@ const createUser = async (userData: Users) => {
   return result;
 };
 
+// Get All users
 const getAllUsersFromDB = async () => {
   const result = await prisma.users.findMany({});
   return result;
 };
 
+// Get Single users
 const getSingleUserFromDB = async (id: string) => {
   const result = await prisma.users.findUnique({
     where: {
@@ -21,6 +23,15 @@ const getSingleUserFromDB = async (id: string) => {
   });
   return result;
 };
+
+// Get user profile
+// const getUserProfile = async() =>{
+//   const result = await prisma.users.findUnique({
+//     where:{
+
+//     }
+//   })
+// }
 
 // Update user
 const updateUserFromDB = async (id: string, payload: Partial<Users>) => {
